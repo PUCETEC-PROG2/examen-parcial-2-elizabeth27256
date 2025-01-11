@@ -1,0 +1,28 @@
+from django.http import HttpResponse
+from django.template import loader
+from .models import Movie
+
+def index(request):
+    movies = Movie.objects.all()
+    
+    context = {
+        'movies': movies,
+    }
+    
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render(context, request))
+    
+    <h1>Listado de Películas</h1>
+    <ul>
+        {% for pelicula in peliculas %}
+            <li><a href="{% url 'details_movies' movie.id %}">{{ title.movie }}</a></li>
+        {% endfor %}
+    </ul>
+
+def Movie(request, movie.id):
+    movie = Movie.objects.get(id=movie_id)
+    template = loader.get_template('details_movies.html')
+    context = {
+        'movie': movie
+    }
+    return HttpResponse(template.render(context, request))

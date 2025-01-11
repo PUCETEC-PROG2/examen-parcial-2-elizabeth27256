@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Detalles de la Película</title>
+</head>
+<body>
+    <h1>{{ title.movie }}</h1>
+    <p><strong>Género:</strong> {{ pelicula.genre }}</p>
+    <p><strong>Director:</strong> {{ pelicula.director_name }}</p>
+    <p><strong>Año de Lanzamiento:</strong> {{ pelicula.release_year }}</p>
+    <p><strong>Sinopsis:</strong> {{ pelicula.synopsis }}</p>
+    <br>
+    <a href="{% url 'list_movies' %}">Listado de películas</a>
+</body>
+</html>
